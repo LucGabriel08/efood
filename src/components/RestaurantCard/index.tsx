@@ -4,6 +4,7 @@ import { estrela } from "../../assets/images";
 import { Link } from "react-router-dom";
 
 type Props = {
+  id: number;
   title: string;
   rate: number;
   description: string;
@@ -13,6 +14,7 @@ type Props = {
 };
 
 const RestaurantCard = ({
+  id,
   title,
   rate,
   description,
@@ -35,7 +37,7 @@ const RestaurantCard = ({
         </S.RateContainer>
       </S.Infos>
       <S.Description>{description}</S.Description>
-      <S.ButtonLink to="/perfil">
+      <S.ButtonLink to={`/perfil/${id}`}>
         <S.Button>Saiba mais</S.Button>
       </S.ButtonLink>
     </S.Content>
