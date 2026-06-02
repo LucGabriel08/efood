@@ -1,5 +1,4 @@
 import * as S from "./styles";
-import { pizza } from "../../assets/images";
 
 type Props = {
   image: string;
