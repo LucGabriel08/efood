@@ -2,39 +2,28 @@ import FoodCard from "../FoodCard";
 import * as S from "./styles";
 import { pizza } from "../../assets/images";
 
-const FoodList = () => (
+type Food = {
+  id: number;
+  title: string;
+  image: string;
+  description: string;
+};
+
+type Props = {
+  foods: Food[];
+};
+
+const FoodList = ({ foods }: Props) => (
   <div className="container">
     <S.List>
-      <FoodCard
-        image={pizza}
-        title="Pizza Marguerita"
-        description="A clássica pizza italiana preparada com ingredientes frescos e muito sabor"
-      />
-      <FoodCard
-        image={pizza}
-        title="Pizza Marguerita"
-        description="A clássica pizza italiana preparada com ingredientes frescos e muito sabor"
-      />
-      <FoodCard
-        image={pizza}
-        title="Pizza Marguerita"
-        description="A clássica pizza italiana preparada com ingredientes frescos e muito sabor"
-      />
-      <FoodCard
-        image={pizza}
-        title="Pizza Marguerita"
-        description="A clássica pizza italiana preparada com ingredientes frescos e muito sabor"
-      />
-      <FoodCard
-        image={pizza}
-        title="Pizza Marguerita"
-        description="A clássica pizza italiana preparada com ingredientes frescos e muito sabor"
-      />
-      <FoodCard
-        image={pizza}
-        title="Pizza Marguerita"
-        description="A clássica pizza italiana preparada com ingredientes frescos e muito sabor"
-      />
+      {foods.map((food) => (
+        <FoodCard
+          key={food.id}
+          image={food.image}
+          title={food.title}
+          description={food.description}
+        />
+      ))}
     </S.List>
   </div>
 );

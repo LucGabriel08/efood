@@ -22,11 +22,11 @@ const Perfil = () => {
     <>
       <ProfileHeader />
       <Banner
-        image={restaurant!.banner}
-        title={restaurant!.title}
-        category={restaurant!.category}
+        image={restaurant.banner}
+        title={restaurant.title}
+        category={restaurant.category}
       />
-      <FoodList />
+      <FoodList foods={restaurant.foods} />
       <Footer />
     </>
   );
