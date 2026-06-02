@@ -1,6 +1,5 @@
 import FoodCard from "../FoodCard";
 import * as S from "./styles";
-import { pizza } from "../../assets/images";
 
 type Food = {
   id: number;

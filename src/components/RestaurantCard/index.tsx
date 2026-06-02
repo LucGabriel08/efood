@@ -1,8 +1,6 @@
 import * as S from "./styles";
 import { estrela } from "../../assets/images";
 
-import { Link } from "react-router-dom";
-
 type Props = {
   id: number;
   title: string;
