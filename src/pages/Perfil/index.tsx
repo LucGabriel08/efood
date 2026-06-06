@@ -1,32 +1,37 @@
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import restaurants from "../../mocks/restaurants";
 
 import ProfileHeader from "../../components/PerfilHeader";
 import Banner from "../../components/Banner";
 import FoodList from "../../components/FoodList";
 import Footer from "../../components/Footer";
-import { banner_macarrao } from "../../assets/images";
-
-console.log("banner:", banner_macarrao);
 
 const Perfil = () => {
   const { id } = useParams();
-
-  const restaurant = restaurants.find((item) => item.id === Number(id));
-
+  const [restaurants, setRestaurants] = useState<any[]>([]);
+  useEffect(() => {
+    fetch("https://api-ebac.vercel.app/api/efood/restaurantes")
+      .then((resposta) => resposta.json())
+      .then((dados) => {
+        setRestaurants(dados);
+      });
+  }, []);
+  const restaurant = restaurants.find((item: any) => item.id === Number(id));
+  if (restaurants.length === 0) {
+    return <h1>Carregando...</h1>;
+  }
   if (!restaurant) {
     return <h1>Restaurante não encontrado</h1>;
   }
-
   return (
     <>
       <ProfileHeader />
       <Banner
-        image={restaurant.banner}
-        title={restaurant.title}
-        category={restaurant.category}
+        image={restaurant.capa}
+        title={restaurant.titulo}
+        category={restaurant.tipo}
       />
-      <FoodList foods={restaurant.foods} />
+      <FoodList foods={restaurant.cardapio} />
       <Footer />
     </>
   );

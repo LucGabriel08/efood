@@ -1,28 +1,30 @@
+import Pratos from "./Pratos";
+
 class Restaurante {
   id: number;
-  title: string;
-  category: string;
-  description: string;
-  image: string;
-  rate: number;
-  featured: boolean;
+  titulo: string;
+  tipo: string;
+  capa: string;
+  avaliacao: string;
+  destacado: number;
+  cardapio: Pratos[];
 
   constructor(
     id: number,
-    title: string,
-    category: string,
-    description: string,
-    image: string,
-    rate: number,
-    featured: boolean,
+    titulo: string,
+    tipo: string,
+    capa: string,
+    avaliacao: string,
+    destacado: number,
+    cardapio: Pratos[],
   ) {
     this.id = id;
-    this.title = title;
-    this.category = category;
-    this.description = description;
-    this.image = image;
-    this.rate = rate;
-    this.featured = featured;
+    this.titulo = titulo;
+    this.tipo = tipo;
+    this.capa = capa;
+    this.avaliacao = avaliacao;
+    this.destacado = destacado;
+    this.cardapio = cardapio;
   }
 }
 

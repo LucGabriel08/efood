@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { cores } from "../../styles/Global";
 
 export const Card = styled.div`
-  background-color: #e66767;
+  background-color: ${cores.salmao};
   padding: 8px;
 
   display: flex;
@@ -17,14 +18,14 @@ export const Image = styled.img`
 `;
 
 export const Title = styled.h3`
-  color: #ffeae6;
+  color: ${cores.corDeFundo};
   font-size: 16px;
   font-weight: 900;
   margin: 8px 0;
 `;
 
 export const Description = styled.p`
-  color: #ffeae6;
+  color: ${cores.corDeFundo};
   font-size: 14px;
   line-height: 22px;
 
@@ -38,8 +39,8 @@ export const Button = styled.button`
   border: none;
   padding: 4px;
 
-  background-color: #ffeae6;
-  color: #e66767;
+  background-color: ${cores.corDeFundo};
+  color: ${cores.salmao};
 
   font-size: 14px;
   font-weight: 700;

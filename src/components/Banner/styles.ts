@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { cores } from "../../styles/Global";
 
 export const Image = styled.div`
   position: relative;
@@ -32,7 +33,7 @@ export const Content = styled.div`
 `;
 
 export const Category = styled.h3`
-  color: #fff;
+  color: ${cores.branco};
 
   font-size: 32px;
   font-weight: 100;
@@ -40,7 +41,7 @@ export const Category = styled.h3`
 `;
 
 export const Title = styled.h2`
-  color: #fff;
+  color: ${cores.branco};
 
   font-size: 32px;
   font-weight: 900;

@@ -3,9 +3,11 @@ import * as S from "./styles";
 
 type Food = {
   id: number;
-  title: string;
-  image: string;
-  description: string;
+  nome: string;
+  foto: string;
+  descricao: string;
+  porcao: string;
+  preco: number;
 };
 
 type Props = {
@@ -18,9 +20,11 @@ const FoodList = ({ foods }: Props) => (
       {foods.map((food) => (
         <FoodCard
           key={food.id}
-          image={food.image}
-          title={food.title}
-          description={food.description}
+          image={food.foto}
+          title={food.nome}
+          description={food.descricao}
+          portion={food.porcao}
+          price={food.preco}
         />
       ))}
     </S.List>
