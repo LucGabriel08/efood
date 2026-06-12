@@ -10,6 +10,7 @@ import Vector from "./logos/Vector.png";
 
 import banner_macarrao from "./banner/banner_macarrao.png";
 import pizza from "./pratos/pizza.png";
+import lixeira from "./logos/lixeira.png";
 
 export {
   sushi,
@@ -22,4 +23,5 @@ export {
   Vector,
   banner_macarrao,
   pizza,
+  lixeira,
 };

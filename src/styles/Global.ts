@@ -13,17 +13,24 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-}
+  }
 
-    body {
+  body {
     background-color: ${cores.corDeFundo};
-    }
+  }
 
-    .container {
+  .container {
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
-    }`;
+  }
+`;
+
+export const breakpoints = {
+  desktop: "1024px",
+  tablet: "768px",
+  mobile: "480px",
+};
 
 export const Container = styled.div`
   max-width: 1024px;

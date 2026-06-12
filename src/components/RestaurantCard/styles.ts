@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { cores } from "../../styles/Global";
+import { breakpoints, cores } from "../../styles/Global";
 
 import { Link } from "react-router-dom";
 
@@ -9,12 +9,20 @@ export const Card = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    margin: 0 auto;
+  }
 `;
 
 export const Image = styled.img`
   width: 100%;
   height: 220px;
   object-fit: cover;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    height: 180px;
+  }
 `;
 
 export const Content = styled.div`
@@ -29,11 +37,19 @@ export const Infos = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    gap: 8px;
+  }
 `;
 
 export const Title = styled.h3`
   color: ${cores.salmao};
   font-size: 18px;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    font-size: 16px;
+  }
 `;
 
 export const Rate = styled.span`
@@ -46,6 +62,11 @@ export const Description = styled.p`
   font-size: 14px;
   line-height: 22px;
   margin-bottom: 16px;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    font-size: 13px;
+    line-height: 20px;
+  }
 `;
 
 export const Button = styled.button`
@@ -58,6 +79,11 @@ export const Button = styled.button`
   font-weight: 700;
   text-align: center;
   cursor: pointer;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 100px;
+    height: 32px;
+  }
 `;
 
 export const Tags = styled.div`
@@ -67,6 +93,12 @@ export const Tags = styled.div`
   display: flex;
   gap: 8px;
   z-index: 1;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    top: 8px;
+    right: 8px;
+    gap: 4px;
+  }
 `;
 
 export const Tag = styled.span`
@@ -76,6 +108,11 @@ export const Tag = styled.span`
   font-size: 12px;
   font-weight: 700;
   white-space: nowrap;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    font-size: 10px;
+    padding: 4px 6px;
+  }
 `;
 
 export const RateContainer = styled.div`

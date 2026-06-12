@@ -3,7 +3,7 @@ class Pratos {
   nome: string;
   descricao: string;
   foto: string;
-  porcao: number;
+  porcao: string;
   preco: number;
 
   constructor(
@@ -11,7 +11,7 @@ class Pratos {
     nome: string,
     descricao: string,
     foto: string,
-    porcao: number,
+    porcao: string,
     preco: number,
   ) {
     this.id = id;

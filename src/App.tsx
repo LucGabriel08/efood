@@ -1,4 +1,5 @@
 import Rotas from "./routes";
+import Cart from "./components/Cart";
 import { GlobalStyle } from "./styles/Global";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <GlobalStyle />
       <Rotas />
+      <Cart />
     </>
   );
 }
