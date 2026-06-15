@@ -52,6 +52,7 @@ export const Logo = styled.img`
 export const Cart = styled.span`
   color: ${cores.salmao};
   font-weight: 900;
+  cursor: pointer;
 
   @media (max-width: ${breakpoints.mobile}) {
     font-size: 14px;
