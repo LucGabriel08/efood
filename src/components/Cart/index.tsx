@@ -1,5 +1,8 @@
+import Confirmation from "../Checkout/Confirmation";
+import Delivery from "../Checkout/Delivery";
+import Payment from "../Checkout/Payment";
 import { useDispatch, useSelector } from "react-redux";
-import { close, remove } from "../store/reducers/cart";
+import { close, remove, goToDelivery } from "../store/reducers/cart";
 import formatPrice from "../../utils/formatPrice";
 import * as S from "./styles";
 import Prato from "../../models/Pratos";
@@ -7,13 +10,43 @@ import { lixeira } from "../../assets/images";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const { items, isOpen } = useSelector((state: any) => state.cart);
+  const { items, isOpen, step } = useSelector((state: any) => state.cart);
   const total = items.reduce((acc: number, item: Prato) => acc + item.preco, 0);
 
   if (!isOpen) {
     return null;
   }
 
+  if (step === "delivery") {
+    return (
+      <>
+        <S.Overlay onClick={() => dispatch(close())} />
+        <S.Container>
+          <Delivery />
+        </S.Container>
+      </>
+    );
+  }
+  if (step === "payment") {
+    return (
+      <>
+        <S.Overlay onClick={() => dispatch(close())} />
+        <S.Container>
+          <Payment />
+        </S.Container>
+      </>
+    );
+  }
+  if (step === "confirmation") {
+    return (
+      <>
+        <S.Overlay onClick={() => dispatch(close())} />
+        <S.Container>
+          <Confirmation />
+        </S.Container>
+      </>
+    );
+  }
   return (
     <>
       <S.Overlay onClick={() => dispatch(close())} />
@@ -36,7 +69,9 @@ const Cart = () => {
           <span>Total:</span>
           <span>{formatPrice(total)}</span>
         </S.Total>
-        <S.Button>Continuar com a entrega</S.Button>
+        <S.Button onClick={() => dispatch(goToDelivery())}>
+          Continuar com a entrega
+        </S.Button>
       </S.Container>
     </>
   );
