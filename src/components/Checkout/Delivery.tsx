@@ -24,7 +24,9 @@ const Delivery = () => {
         .min(5, "Endereço muito curto")
         .required("Campo obrigatório"),
       city: Yup.string().required("Campo obrigatório"),
-      cep: Yup.string().length(9, "CEP inválido").required("Campo obrigatório"),
+      cep: Yup.string()
+        .matches(/^\d{5}-\d{3}$/, "CEP inválido ou incompleto")
+        .required("Campo obrigatório"),
       number: Yup.string().required("Campo obrigatório"),
       complement: Yup.string(),
     }),

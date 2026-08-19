@@ -28,14 +28,19 @@ const Payment = () => {
         .min(5, "Nome muito curto")
         .required("Campo obrigatório"),
       cardNumber: Yup.string()
-        .length(19, "Cartão inválido")
+        .matches(
+          /^\d{4} \d{4} \d{4} \d{4}$/,
+          "Número de cartão inválido ou incompleto",
+        )
         .required("Campo obrigatório"),
-      cvv: Yup.string().length(3, "CVV inválido").required("Campo obrigatório"),
+      cvv: Yup.string()
+        .matches(/^\d{3}$/, "CVV inválido ou incompleto")
+        .required("Campo obrigatório"),
       month: Yup.string()
-        .length(2, "Mês inválido")
+        .matches(/^(0[1-9]|1[0-2])$/, "Mês inválido")
         .required("Campo obrigatório"),
       year: Yup.string()
-        .length(4, "Ano inválido")
+        .matches(/^\d{4}$/, "Ano inválido ou incompleto")
         .required("Campo obrigatório"),
     }),
     onSubmit: async (values) => {

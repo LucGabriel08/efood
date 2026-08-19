@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link as RouterLink } from "react-router-dom";
 import { breakpoints, cores } from "../../styles/Global";
 import { Vector } from "../../assets/images";
 
@@ -30,7 +31,7 @@ export const Content = styled.div`
   }
 `;
 
-export const Link = styled.a`
+export const Link = styled(RouterLink)`
   color: ${cores.salmao};
   font-size: 18px;
   font-weight: 900;
